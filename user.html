@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
 
 <head>
     <meta charset="UTF-8">
@@ -10,14 +9,21 @@
         content="width=device-width，initial-scale=1.0，maximum-scale=1.0，minimum-scale=1.e，user-scalable=no">
     <title>1086科技工作室-成员查询</title>
     <link rel="stylesheet" type="text/css" href="css.css" />
+    <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" />
+    <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 </head>
 
 <body>
-    <ul>
-        <li><a href="https://1086tech.github.io">首页</a></li>
-        <li><a href="https://1086tech.github.io/user.html" class="active">成员录</a></li>
-    </ul>    
-    <h1 align="center" class="h1">工作室成员</h1></br></br>
+    <div class="mdui-appbar">
+        <div class="mdui-tab mdui-toolbar mdui-color-indigo" mdui-tab>
+        <h1 href="javascript:;">1086科技</h1>
+          <a href="1086tech.github.io/" class="mdui-typo-title mdui-tab-centered">首页</a>
+          <a href="1086tech.github.io/user.html" class="mdui-typo-title mdui-tab-centered mdui-tab-active">成员录</a>
+        </div>
+      </div>
+    <h1 align="center" class="h1">工作室成员</h1>
+    <h4 class="p">所有1086科技工作室成员均在本页可查</h4></br></br>
     <div class="cards">
         <div class="card" onclick="window.open('https://shequ.codemao.cn/user/13869990');">
             <img src="https://cdn-community.codemao.cn/47/community/d2ViXzEwMDFfMTM4Njk5OTBfMTM4Njk5OTBfMTY1NjU3OTc5NjkzMV8wN2I0MWY1YQ.png"
@@ -161,7 +167,7 @@
             </br></br>
             <div class="container">
                 <h1>蛟风剑愁</h1></br>
-                <p>---暂无简介---</p>
+                <p>这个剑愁太屑啦（）</p>
             </div>
         </div>
         <div class="card" onclick="window.open('https://shequ.codemao.cn/user/761149');">
@@ -233,6 +239,6 @@
                 <p>期待你的参与~</p>
             </div></br>
         </div>
+    </div>
 </body>
-
 </html>
