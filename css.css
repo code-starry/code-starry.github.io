@@ -1,22 +1,117 @@
-* {
-    outline: 0;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body{
+    background-color: #000;
+}
+/*
+ * 链接：https://juejin.cn/post/7141400972634357768
+ * css有更改
+ * 来源：稀土掘金
+ * 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+ */
+.container{
+    margin:0 auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    flex-wrap:wrap;
+    z-index: 1;
+}
+.container .card{
+    margin:0 auto;
+    position: relative;
+    width: 280px;
+    height: 400px;
+    margin: 30px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+.container .card .content{
+    margin:0 auto;
+    padding: 20px;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.container .card .content h2{
+    font-family: Harmony OS Sans;
+    font-size:larger;
+    margin:0 auto;
+    position: absolute;
+    top: -60px;
+    right: 1px;
+    font-size: 10em;
+    color: rgba(255, 255, 255, 0.05);
+    pointer-events: none;
+}
+.container .card .content h3{
+    font-family: Harmony OS Sans;
+    font-size:large;
+    margin:0 auto;
+    font-size: 1.8em;
+    color: rgb(0, 0, 0);
+    z-index: 1;
+}
+.container .card .content p{
+    font-family: Harmony OS Sans;
+    font-size: medium;
+    font-size: 1em;
+    color: rgb(0, 0, 0);
+    font-weight: 300;
+}
+
+.container .card .content .title{
+    font-family: Harmony OS Sans;
+    font-size: small;
+    position: relative;
+    display: inline-block;
+    padding: 8px 20px;
+    margin-top: 15px;
+    background: rgb(255, 255, 255);
+    color: #000;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+/*
+ * 上方css来源链接：https://juejin.cn/post/7141400972634357768
+ * css有更改
+ * 上方css来源：稀土掘金
+ * 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+ */
+
+.card{
+    transform:scale(1);
+    transition: all 0.2s ease-in;
+}
+.card:hover {
+    transform:scale(1.05);
+    transition: all 0.2s ease-in;
+}
+
+
+
+img{
+    border-radius: 15px;
 }
 
 a {
     font-family: Harmony OS Sans;
     color: #fff;
     text-align: center;
-}
-
-.p {
-    font-family: Harmony OS Sans;
-    text-align: center
-}
-
-.h1 {
-    font-family: Harmony OS Sans;
-    font-size: 50px;
-    font-weight: bold;
 }
 
 .button {
@@ -60,59 +155,6 @@ a {
     right: 0;
 }
 
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 280px;
-    text-align: center;
-    font-family: arial;
-    display: inline-block;
-    margin: 10px;
-    transition: all .3s ease-in 0s;
-}
-
-.card button {
-    border: none;
-    background-color: #4d78cc;
-    color: white;
-    width: 80px;
-    height: 30px;
-    text-align: center;
-    border-radius: 5px;
-}
-
-.card a {
-    color: white;
-}
-
-.container {
-    padding: 0 16px;
-    display: inline;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.container::after {
-    content: "";
-    clear: both;
-    display: table;
-    display: inline;
-}
-
-.cards {
-    text-align: center;
-    margin: 0 auto;
-}
-
-.card:hover {
-    transform: scale(1.05);
-    transition: all 0.3s ease-in;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-}
-
 .header {
     padding-top: 30px;
     padding-bottom: 30px;
@@ -138,30 +180,14 @@ body {
     text-align: center;
 }
 
-.user-v {
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-    width: 7rem;
-    height: 1.5rem;
-    font-size: 18px;
-    color: #fff;
-    background: #FF7F50;
-    background-color: #FF7F50;
-    -webkit-background-size: 14px 14px;
-    background-size: 14px 14px;
-    background-repeat: no-repeat;
-    background-position-x: 2px;
-    background-position-y: center;
-    font-size: 10px;
-    border: 1px solid #ffc210;
-}
-
 .head-title {
     font-family: Harmony OS Sans;
     font-weight: bold;
 }
 
+.mdui-tab-indicator {
+    opacity: 0;
+  }
 
 ul {
     list-style-type: none;
@@ -186,6 +212,7 @@ li a {
 li a:hover {
     background-color: rgb(97, 207, 198);
 }
+
 .active {
     background-color: #4bb3c5;
 }
