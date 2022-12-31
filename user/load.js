@@ -35,7 +35,6 @@
                });
           },
      };
-     const $ = mdui.$;
      $(`<link rel="stylesheet" type="text/css" href="../user.css">`).appendTo(
           document.body
      );
@@ -77,7 +76,9 @@
                  <div class="app-bottom-left-honor-div">
                      <div class="app-bottom-left-honor-div-left">
                          <div class="app-bottom-left-honor-div-left-icon">
-                             <img src="${bgData.honorWall.icons.view}" draggable="false">
+                             <img src="${
+                                  bgData.honorWall.icons.view
+                             }" draggable="false">
                          </div>
                      </div>
                      <div class="app-bottom-left-honor-div-right">
@@ -90,7 +91,9 @@
                  <div class="app-bottom-left-honor-div">
                      <div class="app-bottom-left-honor-div-left">
                          <div class="app-bottom-left-honor-div-left-icon">
-                             <img src="${bgData.honorWall.icons.like}" draggable="false">
+                             <img src="${
+                                  bgData.honorWall.icons.like
+                             }" draggable="false">
                          </div>
                      </div>
                      <div class="app-bottom-left-honor-div-right">
@@ -103,7 +106,9 @@
                  <div class="app-bottom-left-honor-div">
                      <div class="app-bottom-left-honor-div-left">
                          <div class="app-bottom-left-honor-div-left-icon">
-                             <img src="${bgData.honorWall.icons.star}" draggable="false">
+                             <img src="${
+                                  bgData.honorWall.icons.star
+                             }" draggable="false">
                          </div>
                      </div>
                      <div class="app-bottom-left-honor-div-right">
@@ -116,7 +121,9 @@
                  <div class="app-bottom-left-honor-div">
                      <div class="app-bottom-left-honor-div-left">
                          <div class="app-bottom-left-honor-div-left-icon">
-                             <img src="${bgData.honorWall.icons.recreate}" draggable="false">
+                             <img src="${
+                                  bgData.honorWall.icons.recreate
+                             }" draggable="false">
                          </div>
                      </div>
                      <div class="app-bottom-left-honor-div-right">
@@ -137,7 +144,11 @@
                  <div class="app-bottom-left-updatetime-left">更新时间：</div>
                  <div class="app-bottom-left-updatetime-right">${new Date(
                       userData.honorWall.updatetime + 8 * 60 * 60 * 1000
-                 ).toJSON().split("T")[0].split("-").join("/")}</div>
+                 )
+                      .toJSON()
+                      .split("T")[0]
+                      .split("-")
+                      .join("/")}</div>
              </div>
          </div>
          <div class="app-bottom-right">
@@ -151,7 +162,7 @@
                  <div class="app-bottom-right-div-table">
                  ${userData.badge.map((v) => {
                       const s = bgData.badge.find((w) => w.name == v);
-                      return `<div class="app-bottom-right-div-table-div" class="badge-${v}">
+                      return `<div class="app-bottom-right-div-table-div" id="badge-${v}">
                     <div class="app-bottom-right-div-table-div-icon">
                         <img src="${s.icon}" draggable="false">
                     </div>
@@ -171,7 +182,7 @@
                  <div class="app-bottom-right-div-table">
                  ${userData.certificate.map((v) => {
                       const s = bgData.certificate.find((w) => w.name == v);
-                      return `<div class="app-bottom-right-div-table-div" style="background-image: url(${s.bg});" class="certificate-${v}"></div>`;
+                      return `<div class="app-bottom-right-div-table-div" style="background-image: url(${s.bg});" id="certificate-${v}"></div>`;
                  })}
                  </div>
              </div>
@@ -179,13 +190,90 @@
      </div>
  </div>`;
 
-$(".app-bottom-right-certificate .app-bottom-right-div-table-div").each((_,e)=>{
-
-})
-
      $(html).appendTo(document.body);
+
+     $(".app-bottom-right-certificate .app-bottom-right-div-table-div").each(
+          (_, e) => {
+               e.addEventListener("click", function () {
+                    const c = e.id.replace("certificate-", "");
+                    const s = bgData.certificate.find((w) => w.name == c);
+                    $(".app-dialog-name").text(c);
+                    $(".app-dialog-img img").attr("src", s.bg);
+                    $(".app-dialog-content").text(s.description);
+                    document.body.classList.add("mdui-locked");
+                    const ww = $(window).width();
+                    const wh = $(window).height();
+                    const contentwidth = $(".app-dialog").width();
+                    const contentheight = $(".app-dialog").height();
+                    const thiswidth = $(e).width();
+                    const thisheight = $(e).height();
+                    const thispos = $(e).offset();
+                    $(".app-dialog").css("top", thispos.top + "px");
+                    $(".app-dialog").css("left", thispos.left + "px");
+                    $(".app-dialog").css("transform", "scale(0)");
+                    $(".app-dialog")[0].classList.remove("app-dialog-close");
+                    $(".app-dialog-bg")[0].classList.remove("app-dialog-bg-noshow");
+                    $(".app-dialog").addClass(
+                         "app-dialog-animation app-dialog-close-animation"
+                    );
+                    $(".app-dialog-bg").addClass(
+                         "app-dialog-bg-animation app-dialog-bg-noshow-animation"
+                    );
+                    const dleft = ww / 2 - contentwidth / 2;
+                    const dtop = wh / 2 - contentheight / 2;
+                    setTimeout(() => {
+                         $(".app-dialog")[0].classList.remove(
+                              "app-dialog-close-animation"
+                         );
+                         $(".app-dialog-bg")[0].classList.remove(
+                              "app-dialog-bg-noshow-animation"
+                         );
+                         $(".app-dialog").css("top", dtop + "px");
+                         $(".app-dialog").css("left", dleft + "px");
+                         $(".app-dialog").css("width", contentwidth + "px");
+                         $(".app-dialog").css("transform", "scale(1)");
+                    }, 100);
+               });
+               $(".app-dialog-button > button")[0].onclick = function () {
+                    document.body.classList.remove("mdui-locked");
+                    const ww = $(window).width();
+                    const wh = $(window).height();
+                    const contentwidth = $(".app-dialog").width();
+                    const contentheight = $(".app-dialog").height();
+                    const thiswidth = $(e).width();
+                    const thisheight = $(e).height();
+                    const thispos = $(e).offset();
+                    setTimeout(() => {
+                         $(".app-dialog").addClass(
+                              "app-dialog-close-animation"
+                         );
+                         $(".app-dialog-bg").addClass(
+                              "app-dialog-bg-noshow-animation"
+                         );
+                         $(".app-dialog").css("top", thispos.top + "px");
+                         $(".app-dialog").css("left", thispos.left + "px");
+                         $(".app-dialog").css("transform", "scale(0)");
+                    }, 100);
+                    setTimeout(() => {
+                        $(".app-dialog").addClass("app-dialog-close");
+                         $(".app-dialog")[0].classList.remove(
+                              "app-dialog-animation"
+                         );
+                         $(".app-dialog")[0].classList.remove(
+                              "app-dialog-bg-animation"
+                         );
+                         $(".app-dialog-bg").addClass(
+                              "app-dialog-bg-noshow"
+                         );
+                         $(".app-dialog").css("width", "");
+                         $(".app-dialog").css("height", "");
+                    }, 250);
+               };
+          }
+     );
      !(function () {
-          mdui.$(`<div id="wp" class="wp">
+          mdui.$(
+               `<div id="wp" class="wp">
           <div class="xnkl">
               <div class="deng-box3">
                   <div class="deng">
@@ -246,9 +334,10 @@ $(".app-bottom-right-certificate .app-bottom-right-div-table-div").each((_,e)=>{
       
           </div>
       
-      `).appendTo(document.body);
-          mdui.$(`<link rel="stylesheet" href="../../static/lantern.css" />`).appendTo(document.head);
-      })();
-      
-
+      `
+          ).appendTo(document.body);
+          mdui.$(
+               `<link rel="stylesheet" href="../../static/lantern.css" />`
+          ).appendTo(document.head);
+     })();
 });

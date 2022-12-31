@@ -44,15 +44,17 @@ div#app {
 }
 
 .app-top-left-left-img img {
-     width: 12.5;
+     width: 200px;
      height: 200px;
 }
 
 .app-top-left-right-top-left {
-     font-size: 30p1.875em}
+     font-size: 1.875em;
+}
 
 .app-top-left-left {
-     margin-right: 30p1.875em}
+     margin-right: 1.875em;
+}
 
 .app-top-left-right-top-right {
      margin-left: 10px;
@@ -167,8 +169,8 @@ div#app {
 }
 
 .app-bottom-right-certificate .app-bottom-right-div-table-div {
-     width: 176px;
-     height: 99px;
+     width: 160px;
+     height: 90px;
      background-size: 100% 100%;
 }
 
@@ -205,7 +207,7 @@ div#app {
 }
 
 .app-bottom-left > * {
-     margin: 15px 0px;
+     margin: 20px 0px;
 }
 
 .app-bottom-left-coin-icon img {
@@ -244,10 +246,10 @@ div#app {
      position: fixed;
      z-index: 999999999999999999999999999999999999999;
      background: #fff;
-     min-width: 40%;
-     min-height: 50%;
      max-width: 90%;
      max-height: 90%;
+     width: 500px;
+     height: 60%;
      overflow: auto;
      display: flex;
      flex-direction: column;
@@ -257,11 +259,17 @@ div#app {
 }
 
 .app-dialog-animation {
-     transition: 0.25s;
+     transition: all 0.25s;
 }
 
 .app-dialog-close {
      display: none;
+}
+
+.app-dialog-close-animation {
+     opacity: 0;
+     box-shadow: 0px 10px 0px 1px #0000;
+     border-radius: 10px;
 }
 
 .app-dialog-bg-animation {
@@ -270,8 +278,6 @@ div#app {
 
 .app-dialog-bg-noshow-animation {
      opacity: 0;
-     box-shadow: 0px 10px 0px 1px #0000;
-     border-radius: 10px;
 }
 
 .app-dialog-bg-noshow {
@@ -289,16 +295,17 @@ div#app {
 .app-dialog-img {
      width: 100%;
      max-width: 100%;
+     display: flex;
+     justify-content: center;
 }
 
 .app-dialog-img img {
      width: 100%;
-     max-width: 100%;
      border-radius: 0px;
 }
 
 .app-dialog-content {
-     padding: 20px;
+     padding: 10px;
      width: 100%;
      text-align: center;
 }
@@ -313,6 +320,7 @@ div#app {
      flex-direction: row;
      align-items: flex-start;
      justify-content: center;
+     background-color: #fff;
 }
 
 .app-dialog-button button {
@@ -321,6 +329,7 @@ div#app {
      color: #fff;
      padding: 8px;
      border-radius: 5px;
+     cursor: pointer;
 }
 
 @media (max-width: 800px) {
@@ -335,5 +344,10 @@ div#app {
      .app-bottom-right-div-table {
           display: flex;
           flex-wrap: wrap;
+     }
+
+     .app-top-left-left-img img {
+          width: 150px;
+          height: 150px;
      }
 }
