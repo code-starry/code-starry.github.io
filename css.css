@@ -24,11 +24,11 @@
      height: 400px;
      width: 270px;
      margin: 30px;
-     box-shadow: 5px 5px 20px rgba(255, 0, 0, 0.5);
+     box-shadow: 10px 10px 20px #7193FF;
      border-radius: 15px;
-     background: rgba(255, 0, 0, 0.747);
-     border-top: 1px solid rgba(255, 81, 81, 0.5);
-     border-left: 1px solid rgba(255, 81, 81, 0.5);
+     background: linear-gradient(45deg,#7193FF, #B780FF);
+     border-top: 1px solid linear-gradient(45deg,#7193FF, #B780FF);
+     border-left: 1px solid linear-gradient(45deg,#7193FF, #B780FF);
 }
 .container .card .content {
      margin: 0 auto;
@@ -71,7 +71,7 @@
      display: inline-block;
      padding: 10px 20px;
      margin-top: 10px;
-     background: rgb(255, 86, 86);
+     background: linear-gradient(45deg,#7193FF, #B780FF);
      color: rgb(255, 255, 255);
      border-radius: 15px;
      text-decoration: none;
@@ -93,10 +93,6 @@
      transition: all 0.2s ease-in;
 }
 
-.app-color {
-     background: linear-gradient(#7193ff, #b780ff);
-}
-
 .text-color-white {
      color: #fff;
 }
@@ -107,7 +103,7 @@ img {
 
 a {
      font-family: Harmony OS Sans;
-     color: #ff4141;
+     text-decoration:none;
      text-align: center;
 }
 
@@ -116,7 +112,7 @@ a {
      border-radius: 4px;
      border: none;
      color: #ffffff;
-     background: #ff0000;
+     background: #455eef;
      text-align: center;
      font-size: 28px;
      padding: 20px;
@@ -124,7 +120,7 @@ a {
      transition: all 0.5s;
      cursor: pointer;
      margin: 5px;
-     box-shadow: 0 4px 14px 0 #ff2525;
+     box-shadow: 0 4px 14px 0 #455fef;
 }
 
 .button span {
@@ -242,9 +238,8 @@ li a:hover {
 }
 
 .app-color {
-     /* background: linear-gradient(45deg,#7193FF, #B780FF);
-    color: azure; */
-     background: linear-gradient(45deg, #ff0000, #ffb080);
+    background: linear-gradient(45deg,#7193FF, #B780FF);
+    color: azure;
 }
 
 iframe {
