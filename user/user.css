@@ -30,19 +30,6 @@ div#app {
      flex-direction: row;
 }
 
-.app-top-left-right-top-right-level {
-     margin: 0em 0.5em;
-     padding: 0.5em;
-     background: #ddd;
-     border-radius: 3.125em;
-     min-width: 6.25em;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     text-align: center;
-     font-size: 17px;
-}
-
 .app-top-left-left-img img {
      width: 200px;
      height: 200px;
@@ -74,7 +61,7 @@ div#app {
      margin-right: 20px;
 }
 
-.app-bottom > * {
+.app-bottom>* {
      padding: 20px;
 }
 
@@ -88,22 +75,26 @@ div#app {
      padding: 10px 15px;
      display: flex;
      flex-direction: row;
+     color: #FFFFFF;
 }
 
 .app-bottom-left-honor-div-right {
      display: flex;
      flex-direction: column;
+     color: #FFFFFF;
 }
 
 .app-bottom-left-honor-div-right-content {
      font-size: 25px;
      font-weight: bold;
+     color: #FFFFFF;
 }
 
 .app-bottom-left-honor-div-right-title {
      font-size: 16px;
      color: #aaa;
      line-height: 11px;
+     color: #FFFFFF;
 }
 
 .app-bottom-left-coin {
@@ -116,20 +107,17 @@ div#app {
      font-weight: bold;
 }
 
-.app-top-left-right-top-right-level::before {
-     content: "Lv.";
-}
-
 .app-bottom-left-updatetime {
      display: flex;
 }
 
 .app-bottom-left-updatetime-left {
      font-weight: bold;
+     color: #FFFFFF;
 }
 
 .app-bottom-left-updatetime-right {
-     color: #666;
+     color: #FFFFFF;
 }
 
 .app-bottom-right-div-more {
@@ -148,7 +136,7 @@ div#app {
 }
 
 .app-bottom-left {
-     background: #eee;
+     background: linear-gradient(45deg, #7193FF, #B780FF);
      width: 35%;
      border-radius: 10px;
      padding: 15px 25px;
@@ -156,8 +144,8 @@ div#app {
 
 .app-bottom-right-div-more button {
      border: none;
-     background: #d8d8d8;
-     color: #000;
+     background: linear-gradient(45deg, #7193FF, #B780FF);
+     color: #ffffff;
      padding: 8px 15px;
      border-radius: 50px;
      cursor: pointer;
@@ -165,7 +153,7 @@ div#app {
 }
 
 .app-bottom-right-div-more button:hover {
-     background: #ccc;
+     background: linear-gradient(45deg, #7193FF, #B780FF);
 }
 
 .app-bottom-right-certificate .app-bottom-right-div-table-div {
@@ -176,7 +164,7 @@ div#app {
 
 .app-bottom-right-div-table-div {
      margin: 10px;
-     background: #ddd;
+     background: linear-gradient(45deg, #7193FF, #B780FF);
      border-radius: 10px;
      cursor: pointer;
      transition: 0.3s;
@@ -187,8 +175,7 @@ div#app {
      transform: scale(1.1);
 }
 
-.app-bottom-right-div:not(.app-bottom-right-certificate)
-     .app-bottom-right-div-table-div {
+.app-bottom-right-div:not(.app-bottom-right-certificate) .app-bottom-right-div-table-div {
      width: 150px;
      height: 60px;
      display: flex;
@@ -206,7 +193,7 @@ div#app {
      padding: 40px 60px 30px 60px;
 }
 
-.app-bottom-left > * {
+.app-bottom-left>* {
      margin: 20px 0px;
 }
 
@@ -215,16 +202,19 @@ div#app {
      height: 25px;
      margin-right: 5px;
      border-radius: 0px;
+     filter: invert(1);
 }
 
 .app-bottom-right-div-title {
      margin-bottom: 20px;
+     color: #000;
 }
 
 .app-bottom-left-honor-div-left-icon img {
      width: 25px;
      height: 25px;
      border-radius: 0px;
+     filter: brightness(10);
 }
 
 .app-bottom-left-honor-div-left-icon {
@@ -245,7 +235,7 @@ div#app {
 .app-dialog {
      position: fixed;
      z-index: 999999999999999999999999999999999999999;
-     background: #fff;
+     background: linear-gradient(45deg, #7193FF, #B780FF);
      max-width: 90%;
      max-height: 90%;
      width: 500px;
@@ -320,16 +310,35 @@ div#app {
      flex-direction: row;
      align-items: flex-start;
      justify-content: center;
-     background-color: #fff;
+     background-color: linear-gradient(45deg, #7193FF, #B780FF);
 }
 
 .app-dialog-button button {
      border: none;
      background: #f00;
-     color: #fff;
+     color: linear-gradient(45deg, #7193FF, #B780FF);
      padding: 8px;
      border-radius: 5px;
      cursor: pointer;
+}
+
+.container {
+     justify-content: flex-start;
+     width: 100%;
+}
+
+.container .card {
+     margin: 20px 10px;
+     height: 300px;
+     width: 200px;
+}
+
+.container .card .content h3 {
+     font-size: 1.2em;
+}
+
+.app-bottom-left-title {
+     color: #ffffff;
 }
 
 @media (max-width: 800px) {
@@ -337,7 +346,7 @@ div#app {
           flex-direction: column;
      }
 
-     .app-bottom > * {
+     .app-bottom>* {
           width: 100%;
      }
 
